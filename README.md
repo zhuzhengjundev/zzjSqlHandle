@@ -11,13 +11,13 @@
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、在上述正确的路径下新建文件夹和文件之后，你需要在dbconfig.properties文件里编写你的数据库配置内容，需要四个变量，分别为driverClassName(驱动)、db_url(数据库地址)、db_name(数据库连接名)、db_password(数据库连接密码)。</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;实例：</p>
         <p>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <h3>driverClassName=com.mysql.cj.jdbc.Driver</h3><br>
+                driverClassName=com.mysql.cj.jdbc.Driver<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <h3>db_url=jdbc:mysql://localhost:3306/my_store?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC</h3><br>
+                db_url=jdbc:mysql://localhost:3306/my_store?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <h3>db_name=root</h3><br>
+                db_name=root<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <h3>db_password=123456</h3><br>
+                db_password=123456<br>
         </p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;你可以将以上四行代码复制粘贴到你新建的dbconfig.properties文件中，然后修改后面对应你数据库信息的值</p>
         <h5>二：来看看说明吧！</h5>

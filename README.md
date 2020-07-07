@@ -1,4 +1,11 @@
 <html>
+        <head>
+                <style>
+                        span {
+                                color: red;
+                        }
+                </style>
+        </head>
         <body>
         <h1>jSqlHandle（让初学者不再迷茫）</h1>
         <h3>zhuzhengjundev</h3>

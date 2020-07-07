@@ -29,11 +29,13 @@
         <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、你还需要知道一件事</h5>
         <p>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                在以上配置配好之后，简单的看一下使用说明后，你就可以调用增删改查方法了，下面的有对增删改查四种方法进行介绍<br>
+                在以上配置配好之后，简单的看一下使用说明后，你还需要做一件事：<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                那就是如果你想用实体类对数据表进行增删改查，那你就要根据数据表的名称，表内各字段的名称来创建实体类；名称的字母必须一模一样，不区分大小写。<br>
+                那就是你需要根据数据表的名称，表内各字段的名称来创建实体类(名称的字母必须一模一样，不区分大小写)<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                当然，如果你直接写sql字段串也可以，同样也是调用下面的增删改查方法(直接传入即可)。
+                当然，如果你直接写sql字段串也可以，同样也是调用下面的增删改查方法(直接传入即可)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                做完这些之后你就可以调用增删改查方法了，下面的有对增删改查四种方法进行介绍
         </p>
         <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3、如何插入（insert）</h5>
         <p>

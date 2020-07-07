@@ -80,7 +80,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 Users users = new Users("value2","value3","value4","value5");<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                //不过在调用更新方法的时候需要多传入一个参数，即你需要使用哪些字段名称作为更新条件，可多个条件，中间用逗号隔开，作为字符串传入即可<br>
+                //不过在调用更新方法的时候需要多传入一个参数，即你需要使用哪些字段名称作为更新条件，可多个条件，中间用英文逗号隔开，作为字符串传入即可<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 //当然，如果你直接写sql字符串，就不需要传入第二个参数<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

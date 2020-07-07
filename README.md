@@ -120,11 +120,11 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 Users users = new Users("value2","value3","value4","value5");<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                //不过在调用分页查询方法的时候需要多传入两个参数，即你要查询的页码，还有每页显示的数据，都为int类型<br>
+                //不过在调用分页查询方法的时候需要多传入两个参数，即你要查询的页码，还有每页显示的数据条数，都为int类型<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                //当然，如果你直接写sql字符串，同样也需要多传入两个参数，即你要查询的页码，还有每页显示的数据，都为int类型<br>
+                //当然，如果你直接写sql字符串，同样也需要多传入刚刚说的那两个参数<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                JResponse jResponse = dbHandle.selectPage(users,1,10);//这里selectPage方法后两个字段的意思是查询第一页的10条数据<br>
+                JResponse jResponse = dbHandle.selectPage(users,1,10);//这里selectPage方法后两个字段的意思按照每页10条数据查询出第一页的数据<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 jResponse.getState() //拿到状态值，大于0即查询成功，等于0即查询的数据为空或查询失败<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

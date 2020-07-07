@@ -145,17 +145,19 @@
         <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7、如果你不想通过实体类操作，或者说实体类满足不了你的需求，你可以自己编写sql语句，以字符串的格式传入上面五种方法中传实体类的位置</h5>
         <p>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                即dbHandle.insert("INSERT INTO table_name (列1, 列2,...) VALUES (值1, 值2,....)");<br>
+                JDbHandle dbHandle = new JDbHandle(false);<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                即dbHandle.delete("DELETE FROM 表名称 WHERE 列名称 = 值 AND 列名称 = 值");<br>
+                dbHandle.insert("INSERT INTO table_name (列1, 列2,...) VALUES (值1, 值2,....)");<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                dbHandle.delete("DELETE FROM 表名称 WHERE 列名称 = 值 AND 列名称 = 值");<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 //记住更新方法如果使用实体类得传第二个参数，即你需要使用哪些字段名称作为更新条件，可多个条件，中间用逗号隔开，作为字符串传入即可;这里直接写sql不需要传<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                即dbHandle.update("UPDATE 表名称 SET 更新列名称 = 新值 WHERE 条件列名称 = 条件值");<br>
+                dbHandle.update("UPDATE 表名称 SET 更新列名称 = 新值 WHERE 条件列名称 = 条件值");<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                即dbHandle.select("SELECT 列名称 FROM 表名称 WHERE 条件列名称 = 条件值");//也可多表查询<br>
+                dbHandle.select("SELECT 列名称 FROM 表名称 WHERE 条件列名称 = 条件值");//也可多表查询<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                即dbHandle.selectPage("SELECT 列名称 FROM 表名称 WHERE 条件列名称 = 条件值");//也可多表查询
+                dbHandle.selectPage("SELECT 列名称 FROM 表名称 WHERE 条件列名称 = 条件值");//也可多表查询
         </p>
         </body>
 </html>

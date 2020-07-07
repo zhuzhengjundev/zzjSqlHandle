@@ -159,5 +159,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 dbHandle.selectPage("SELECT 列名称 FROM 表名称 WHERE 条件列名称 = 条件值");//也可多表查询
         </p>
+        <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8、最后看一下调用方法的截图吧！</h5>
+        <img src="http://a1.qpic.cn/psc?/V100BnzP2hNMuE/qWkkGOdvaHRbO0s2SzmJ0Lmyayv*ye*XRJo7*cIInDNBuOW72ftmJEgnixFRsgVgp6*BMZqObLJ2vnzDO8RprA!!/c&ek=1&kp=1&pt=0&bo=hwUWAwAAAAADF6U!&tl=1&vuin=1471888328&tm=1594116000&sce=60-2-2&rf=0-0">
         </body>
 </html>

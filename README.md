@@ -7,8 +7,8 @@
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;你只需要引入一个jar包，配置数据库信息之后，然后准备一个实体类传入对应的方法中，即可对数据表进行增，删，改，查，分页查，当然，你也可以写sql语句传入方法中。除此之外，你还可以使用事务，在对所有sql操作成功之后一起提交事务即操作成功，否则回滚掉事务，让之前的sql操作失效。
         </p>
         <h4>一：来看看如何配置吧！</h4>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1、配置的话很简单，你只需要把jSqlHandle.jar包放在对应的lib目录下，然后在WebContent目录下新建一个文件夹名为：config，然后在config文件夹里新建一个dbconfig.properties文件，切记文件的名字和后缀名要一模一样，否则连接不上数据库。</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、在上述正确的路径下新建文件夹和文件之后，你需要在dbconfig.properties文件里编写你的数据库配置内容，需要四个变量，分别为driverClassName(驱动)、db_url(数据库地址)、db_name(数据库连接名)、db_password(数据库连接密码)。</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;① 配置的话很简单，你只需要把jSqlHandle.jar包放在对应的lib目录下，然后在WebContent目录下新建一个文件夹名为：config，然后在config文件夹里新建一个dbconfig.properties文件，切记文件的名字和后缀名要一模一样，否则连接不上数据库。</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;② 在上述正确的路径下新建文件夹和文件之后，你需要在dbconfig.properties文件里编写你的数据库配置内容，需要四个变量，分别为driverClassName(驱动)、db_url(数据库地址)、db_name(数据库连接名)、db_password(数据库连接密码)。</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;实例：</p>
         <p>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 driverClassName=com.mysql.cj.jdbc.Driver<br>

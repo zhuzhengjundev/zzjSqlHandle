@@ -120,11 +120,13 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 Users users = new Users("value2","value3","value4","value5");<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                //不过在调用分页查询方法的时候需要多传入两个参数，即你要查询的页码，还有每页显示的数据条数，都为int类型<br>
+                //不过在调用分页查询方法的时候需要多传入四个参数，即查询排序的字段，以及排序方式（是否正序），你要查询的页码，还有每页显示的数据条数<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                //当然，如果你直接写sql字符串，同样也需要多传入刚刚说的那两个参数，不过这里要注意一点，传入的sql结尾不要加封号<br>
+                //当然，如果你直接写sql字符串，只需要传入两个参数，即你要查询的页码，还有每页显示的数据条数，不过这里要注意一点，传入的sql字符串结尾不要加封号<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                JResponse jResponse = dbHandle.selectPage(users,1,10);//这里selectPage方法后两个字段的意思按照每页10条数据查询出第一页的数据<br>
+                //这里selectPage方法传参的意思按照每页10条数据且按照 row_id 和  user_name 字段倒叙查询出第一页的数据<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                JResponse jResponse = dbHandle.selectPage(users2,"  row_id , user_name ",false,1,2);这<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 jResponse.getState() //拿到状态值，大于0即查询成功，等于0即查询的数据为空或查询失败<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -157,7 +159,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 dbHandle.select("SELECT 列名称 FROM 表名称 WHERE 条件列名称 = 条件值");<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                dbHandle.selectPage("SELECT 列名称 FROM 表名称 WHERE 条件列名称 = 条件值");//注意这里传参的sql语句结尾不要加封号
+                dbHandle.selectPage("SELECT 列名称 FROM 表名称 WHERE 条件列名称 = 条件值",1,10);//注意这里传参的sql语句结尾不要加封号
         </p>
         <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8、最后看一下调用方法的截图吧！</h5>
         <img src="http://a1.qpic.cn/psc?/V100BnzP2hNMuE/qWkkGOdvaHRbO0s2SzmJ0Lmyayv*ye*XRJo7*cIInDNBuOW72ftmJEgnixFRsgVgp6*BMZqObLJ2vnzDO8RprA!!/c&ek=1&kp=1&pt=0&bo=hwUWAwAAAAADF6U!&tl=1&vuin=1471888328&tm=1594116000&sce=60-2-2&rf=0-0">

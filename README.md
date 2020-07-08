@@ -126,7 +126,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 //这里selectPage方法传参的意思按照每页10条数据且按照 row_id 和  user_name 字段倒叙查询出第一页的数据<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                JResponse jResponse = dbHandle.selectPage(users2,"  row_id , user_name ",false,1,2);这<br>
+                JResponse jResponse = dbHandle.selectPage(users2,"  row_id , user_name ",false,1,10);<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 jResponse.getState() //拿到状态值，大于0即查询成功，等于0即查询的数据为空或查询失败<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

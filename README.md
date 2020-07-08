@@ -94,7 +94,7 @@
                 jResponse.getPageData().getPageAll(); //查询的数据的总页数
                 jResponse.getPageData().getData(); //查询的当前页码的数据(该数据同样为jsonArray格式，你也可以使用gson将它转成List )
                 dbHandle.stopConn();
-        </p>
+        </pre>
         <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7、如果你不想通过实体类操作，或者说实体类满足不了你的需求，你可以自己编写sql语句，以字符串的格式传入上面五种方法中传实体类的位置</h5>
         <pre>
                 JDbHandle dbHandle = new JDbHandle(false);

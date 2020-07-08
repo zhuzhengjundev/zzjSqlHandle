@@ -162,6 +162,6 @@
                 dbHandle.selectPage("SELECT 列名称 FROM 表名称 WHERE 条件列名称 = 条件值",1,10);//注意这里传参的sql语句结尾不要加封号
         </p>
         <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8、最后看一下调用方法的截图吧！</h5>
-        <img src="http://m.qpic.cn/psc?/V100BnzP2hNMuE/qWkkGOdvaHRbO0s2SzmJ0AMD0o*3B7A15BHC5jhnFCogYB9LJB.zXxoe0AMnkE.4ttzx*jXZRXrH.8h04Z2jsw!!/b&bo=jwUXAwAAAAADB7w!&rf=viewer_4">
+        <img src="http://m.qpic.cn/psc?/V100BnzP2hNMuE/qWkkGOdvaHRbO0s2SzmJ0AMD0o*3B7A15BHC5jhnFCogYB9LJB.zXxoe0AMnkE.4ttzx*jXZRXrH.8h04Z2jsw!!/b&bo=jwUXAwAAAAADB7w!&rf=viewer_4" />
         </body>
 </html>

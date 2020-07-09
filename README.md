@@ -11,10 +11,10 @@
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;② 在上述正确的路径下新建文件夹和文件之后，你需要在dbconfig.properties文件里编写你的数据库配置内容，需要四个变量，分别为driverClassName(驱动)、db_url(数据库地址)、db_name(数据库连接名)、db_password(数据库连接密码)。</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;实例：</p>
         <pre>     
-                driverClassName=com.mysql.cj.jdbc.Driver
-                db_url=jdbc:mysql://localhost:3306/my_store?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
-                db_name=root
-                db_password=123456
+        driverClassName=com.mysql.cj.jdbc.Driver
+        db_url=jdbc:mysql://localhost:3306/my_store?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+        db_name=root
+        db_password=123456
         </pre>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;你可以将以上四行代码复制粘贴到你新建的dbconfig.properties文件中，然后修改后面对应你数据库信息的值</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最后看一下配置的截图吧！</p><br>
@@ -36,74 +36,74 @@
         </p>
         <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3、如何插入（insert）</h5>
         <pre>
-JDbHandle dbHandle = new JDbHandle(false);
-//该实体类后面的参数作为插入的字段数据值(注：切记该实体类的类名和成员变量名字要与数据表对应，不能缺少或添加字段，不区分大小写)
-Users users = new Users("value2","value3","value4","value5");
-JResponse jResponse = dbHandle.insert(users);
-jResponse.getState() //拿到状态值，大于0即插入成功，等于0即插入失败
-jResponse.getMessage() //拿到中文提示信息
-dbHandle.stopConn();
+        JDbHandle dbHandle = new JDbHandle(false);
+        //该实体类后面的参数作为插入的字段数据值(注：切记该实体类的类名和成员变量名字要与数据表对应，不能缺少或添加字段，不区分大小写)
+        Users users = new Users("value2","value3","value4","value5");
+        JResponse jResponse = dbHandle.insert(users);
+        jResponse.getState() //拿到状态值，大于0即插入成功，等于0即插入失败
+        jResponse.getMessage() //拿到中文提示信息
+        dbHandle.stopConn();
         </pre>
         <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4、如何删除（dalete）</h5>
         <pre>
-JDbHandle dbHandle = new JDbHandle(false);
-//该实体类后面的参数作为删除的字段条件值(注：切记该实体类的类名和成员变量名字要与数据表对应，不能缺少或添加字段，不区分大小写)
-Users users = new Users("value2","value3","value4","value5");
-JResponse jResponse = dbHandle.dalete(users);
-jResponse.getState() //拿到状态值，大于0即删除成功，等于0即删除失败
-jResponse.getMessage() //拿到中文提示信息
-dbHandle.stopConn();
+        JDbHandle dbHandle = new JDbHandle(false);
+        //该实体类后面的参数作为删除的字段条件值(注：切记该实体类的类名和成员变量名字要与数据表对应，不能缺少或添加字段，不区分大小写)
+        Users users = new Users("value2","value3","value4","value5");
+        JResponse jResponse = dbHandle.dalete(users);
+        jResponse.getState() //拿到状态值，大于0即删除成功，等于0即删除失败
+        jResponse.getMessage() //拿到中文提示信息
+        dbHandle.stopConn();
         </pre>
         <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5、如何更新（update）</h5>
         <pre>
-JDbHandle dbHandle = new JDbHandle(false);
-//该实体类后面的参数作为更新的字段数据值(注：切记该实体类的类名和成员变量名字要与数据表对应，不能缺少或添加字段，不区分大小写)
-Users users = new Users("value2","value3","value4","value5");
-//不过在调用更新方法的时候需要多传入一个参数，即你需要使用哪些字段名称作为更新条件，可多个条件，中间用英文逗号隔开，作为字符串传入即可
-//当然，如果你直接写sql字符串，就不需要传入第二个参数
-JResponse jResponse = dbHandle.update(users,"userName,userPwd");
-jResponse.getState() //拿到状态值，大于0即更新成功，等于0即更新失败
-jResponse.getMessage() //拿到中文提示信息
-dbHandle.stopConn();
+        JDbHandle dbHandle = new JDbHandle(false);
+        //该实体类后面的参数作为更新的字段数据值(注：切记该实体类的类名和成员变量名字要与数据表对应，不能缺少或添加字段，不区分大小写)
+        Users users = new Users("value2","value3","value4","value5");
+        //不过在调用更新方法的时候需要多传入一个参数，即你需要使用哪些字段名称作为更新条件，可多个条件，中间用英文逗号隔开，作为字符串传入即可
+        //当然，如果你直接写sql字符串，就不需要传入第二个参数
+        JResponse jResponse = dbHandle.update(users,"userName,userPwd");
+        jResponse.getState() //拿到状态值，大于0即更新成功，等于0即更新失败
+        jResponse.getMessage() //拿到中文提示信息
+        dbHandle.stopConn();
         </pre>
         <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6、如何查询（select）</h5>
         <pre>
-JDbHandle dbHandle = new JDbHandle(false);
-//该实体类后面的参数作为查询的字段条件值(注：切记该实体类的类名和成员变量名字要与数据表对应，不能缺少或添加字段，不区分大小写)
-Users users = new Users("value2","value3","value4","value5");
-JResponse jResponse = dbHandle.select(users);
-jResponse.getState() //拿到状态值，大于0即查询成功，等于0即查询的数据为空或查询失败
-jResponse.getMessage() //拿到中文提示信息
-jResponse.getData() //拿到查询的数据(该数据为jsonArray格式，你也可以使用gson将它转成List )
-dbHandle.stopConn();
+        JDbHandle dbHandle = new JDbHandle(false);
+        //该实体类后面的参数作为查询的字段条件值(注：切记该实体类的类名和成员变量名字要与数据表对应，不能缺少或添加字段，不区分大小写)
+        Users users = new Users("value2","value3","value4","value5");
+        JResponse jResponse = dbHandle.select(users);
+        jResponse.getState() //拿到状态值，大于0即查询成功，等于0即查询的数据为空或查询失败
+        jResponse.getMessage() //拿到中文提示信息
+        jResponse.getData() //拿到查询的数据(该数据为jsonArray格式，你也可以使用gson将它转成List )
+        dbHandle.stopConn();
         </pre>
         <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6、如何分页查询（selectPage）</h5>
         <pre>
-JDbHandle dbHandle = new JDbHandle(false);
-//该实体类后面的参数作为查询的字段条件值(注：切记该实体类的类名和成员变量名字要与数据表对应，不能缺少或添加字段，不区分大小写)
-Users users = new Users("value2","value3","value4","value5");
-//不过在调用分页查询方法的时候需要多传入四个参数，即查询排序的字段，以及排序方式（是否正序），你要查询的页码，还有每页显示的数据条数
-//当然，如果你直接写sql字符串，只需要传入两个参数，即你要查询的页码，还有每页显示的数据条数，不过这里要注意一点，传入的sql字符串结尾不要加封号
-//这里selectPage方法传参的意思按照每页10条数据且按照 row_id 和  user_name 字段倒叙查询出第一页的数据
-JResponse jResponse = dbHandle.selectPage(users2,"  row_id , user_name ",false,1,10);
-jResponse.getState() //拿到状态值，大于0即查询成功，等于0即查询的数据为空或查询失败
-jResponse.getMessage() //拿到中文提示信息
-jResponse.getPageData() //拿到查询的分页数据对象(该数据为JPageData对象，使用说明中有提到)
-jResponse.getPageData().getPageIndex(); //查询的当前页码
-jResponse.getPageData().getPageSize(); //查询的每页显示的数据条数
-jResponse.getPageData().getPageAll(); //查询的数据的总页数
-jResponse.getPageData().getData(); //查询的当前页码的数据(该数据同样为jsonArray格式，你也可以使用gson将它转成List )
-dbHandle.stopConn();
+        JDbHandle dbHandle = new JDbHandle(false);
+        //该实体类后面的参数作为查询的字段条件值(注：切记该实体类的类名和成员变量名字要与数据表对应，不能缺少或添加字段，不区分大小写)
+        Users users = new Users("value2","value3","value4","value5");
+        //不过在调用分页查询方法的时候需要多传入四个参数，即查询排序的字段，以及排序方式（是否正序），你要查询的页码，还有每页显示的数据条数
+        //当然，如果你直接写sql字符串，只需要传入两个参数，即你要查询的页码，还有每页显示的数据条数，不过这里要注意一点，传入的sql字符串结尾不要加封号
+        //这里selectPage方法传参的意思按照每页10条数据且按照 row_id 和  user_name 字段倒叙查询出第一页的数据
+        JResponse jResponse = dbHandle.selectPage(users2,"  row_id , user_name ",false,1,10);
+        jResponse.getState() //拿到状态值，大于0即查询成功，等于0即查询的数据为空或查询失败
+        jResponse.getMessage() //拿到中文提示信息
+        jResponse.getPageData() //拿到查询的分页数据对象(该数据为JPageData对象，使用说明中有提到)
+        jResponse.getPageData().getPageIndex(); //查询的当前页码
+        jResponse.getPageData().getPageSize(); //查询的每页显示的数据条数
+        jResponse.getPageData().getPageAll(); //查询的数据的总页数
+        jResponse.getPageData().getData(); //查询的当前页码的数据(该数据同样为jsonArray格式，你也可以使用gson将它转成List )
+        dbHandle.stopConn();
         </pre>
         <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7、如果你不想通过实体类操作，或者说实体类满足不了你的需求，你可以自己编写sql语句，以字符串的格式传入上面五种方法中传实体类的位置</h5>
         <pre>
-JDbHandle dbHandle = new JDbHandle(false);
-dbHandle.insert("INSERT INTO table_name (列1, 列2,...) VALUES (值1, 值2,....)");
-dbHandle.delete("DELETE FROM 表名称 WHERE 列名称 = 值 AND 列名称 = 值");
-//记住更新方法如果使用实体类得传第二个参数，即你需要使用哪些字段名称作为更新条件，可多个条件，中间用逗号隔开，作为字符串传入即可;这里直接写sql不需要传
-dbHandle.update("UPDATE 表名称 SET 更新列名称 = 新值 WHERE 条件列名称 = 条件值");
-dbHandle.select("SELECT 列名称 FROM 表名称 WHERE 条件列名称 = 条件值");
-dbHandle.selectPage("SELECT 列名称 FROM 表名称 WHERE 条件列名称 = 条件值",1,10);//注意这里传参的sql语句结尾不要加封号
+        JDbHandle dbHandle = new JDbHandle(false);
+        dbHandle.insert("INSERT INTO table_name (列1, 列2,...) VALUES (值1, 值2,....)");
+        dbHandle.delete("DELETE FROM 表名称 WHERE 列名称 = 值 AND 列名称 = 值");
+        //记住更新方法如果使用实体类得传第二个参数，即你需要使用哪些字段名称作为更新条件，可多个条件，中间用逗号隔开，作为字符串传入即可;这里直接写sql不需要传
+        dbHandle.update("UPDATE 表名称 SET 更新列名称 = 新值 WHERE 条件列名称 = 条件值");
+        dbHandle.select("SELECT 列名称 FROM 表名称 WHERE 条件列名称 = 条件值");
+        dbHandle.selectPage("SELECT 列名称 FROM 表名称 WHERE 条件列名称 = 条件值",1,10);//注意这里传参的sql语句结尾不要加封号
         </pre>
         <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8、最后看一下调用方法的截图吧！</h5>
         <img src="http://m.qpic.cn/psc?/V100BnzP2hNMuE/qWkkGOdvaHRbO0s2SzmJ0AMD0o*3B7A15BHC5jhnFCogYB9LJB.zXxoe0AMnkE.4ttzx*jXZRXrH.8h04Z2jsw!!/b&bo=jwUXAwAAAAADB7w!&rf=viewer_4" />

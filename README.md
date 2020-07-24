@@ -73,6 +73,9 @@
         Users users = new Users("value2","value3","value4","value5");
         //第一个参数为查询表的实体类，各个字段代表查询条件，第二个参数表示是否模糊查询
         JResponse jResponse = dbHandle.select(users,false);
+        或者
+        //第一个参数为查询表的实体类，各个字段代表查询条件，第二个参数表示是否模糊查询,查询排序的字段，以及排序方式（是否正序）
+        JResponse jResponse = dbHandle.select(users,false,"key1,key2",true);
         jResponse.getState() //拿到状态值，大于0即查询成功，等于0即查询的数据为空或查询失败
         jResponse.getMessage() //拿到中文提示信息
         jResponse.getData() //拿到查询的数据(该数据为jsonArray格式，你也可以使用gson将它转成List )

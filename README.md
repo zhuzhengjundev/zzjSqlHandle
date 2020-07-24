@@ -71,7 +71,8 @@
         JDbHandle dbHandle = new JDbHandle(false);
         //该实体类后面的参数作为查询的字段条件值(注：切记该实体类的类名和成员变量名字要与数据表对应，不能缺少或添加字段，不区分大小写)
         Users users = new Users("value2","value3","value4","value5");
-        JResponse jResponse = dbHandle.select(users);
+        //第一个参数为查询表的实体类，各个字段代表查询条件，第二个参数表示是否模糊查询
+        JResponse jResponse = dbHandle.select(users,false);
         jResponse.getState() //拿到状态值，大于0即查询成功，等于0即查询的数据为空或查询失败
         jResponse.getMessage() //拿到中文提示信息
         jResponse.getData() //拿到查询的数据(该数据为jsonArray格式，你也可以使用gson将它转成List )
@@ -82,10 +83,10 @@
         JDbHandle dbHandle = new JDbHandle(false);
         //该实体类后面的参数作为查询的字段条件值(注：切记该实体类的类名和成员变量名字要与数据表对应，不能缺少或添加字段，不区分大小写)
         Users users = new Users("value2","value3","value4","value5");
-        //不过在调用分页查询方法的时候需要多传入四个参数，即查询排序的字段，以及排序方式（是否正序），你要查询的页码，还有每页显示的数据条数
+        //不过在调用分页查询方法的时候需要多传入四个参数，即是否模糊查询，查询排序的字段，以及排序方式（是否正序），你要查询的页码，还有每页显示的数据条数
         //当然，如果你直接写sql字符串，只需要传入两个参数，即你要查询的页码，还有每页显示的数据条数，不过这里要注意一点，传入的sql字符串结尾不要加封号
-        //这里selectPage方法传参的意思按照每页10条数据且按照 row_id 和  user_name 字段倒叙查询出第一页的数据
-        JResponse jResponse = dbHandle.selectPage(users2,"  row_id , user_name ",false,1,10);
+        //这里selectPage方法传参的意思按照每页10条数据且按照 row_id 和  user_name 字段倒叙查询出第一页的数据，
+        JResponse jResponse = dbHandle.selectPage(users2,false,"  row_id , user_name ",false,1,10);
         jResponse.getState() //拿到状态值，大于0即查询成功，等于0即查询的数据为空或查询失败
         jResponse.getMessage() //拿到中文提示信息
         jResponse.getPageData() //拿到查询的分页数据对象(该数据为JPageData对象，使用说明中有提到)

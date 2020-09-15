@@ -1,6 +1,6 @@
 <html>
         <body>
-        <h1>jSqlHandle（操作数据库很烦？来试试它？）</h1>
+        <h1>jsp操作数据库很烦？来试试它 ---> jSqlHandle</h1>
         <h2>zhuzhengjundev</h2>
         <img src="https://qlogo1.store.qq.com/qzone/1471888328/1471888328/100?1590622011">
         <h3>简介：</h3>

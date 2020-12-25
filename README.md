@@ -109,7 +109,18 @@
         dbHandle.select("SELECT 列名称 FROM 表名称 WHERE 条件列名称 = 条件值");
         dbHandle.selectPage("SELECT 列名称 FROM 表名称 WHERE 条件列名称 = 条件值",1,10);//注意这里传参的sql语句结尾不要加封号
         </pre>
-        <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8、最后看一下调用方法的截图吧！</h5>
-        <img src="http://m.qpic.cn/psc?/V100BnzP2hNMuE/qWkkGOdvaHRbO0s2SzmJ0AMD0o*3B7A15BHC5jhnFCogYB9LJB.zXxoe0AMnkE.4ttzx*jXZRXrH.8h04Z2jsw!!/b&bo=jwUXAwAAAAADB7w!&rf=viewer_4" />
+        <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8、工具类 `JTool`</h5>
+        <pre>
+ 	//使用它可以直接获取一个uuid的值，返回类型为String。
+	JTool.getUuid()
+	//使用它可以直接获取当前系统时间，返回类型为String。
+	JTool.getDate()
+	//使用它可以将`JsonArray`对象解析对应的List，你需要传入 JsonArray 和 Class<T>
+	//JsonArray 就是你要解析的json数组，Class<T> 为你要解析的实体类。返回类型为 List<指定的实体类>。
+	JTool.arseJsonArrayToList(JsonArray jsonArray,Class<T> classT)
+	//使用它可以将`JsonArray`对象解析对应的List，你需要传入 JsonArray 和 Class<T>
+	//JsonArray 就是你要解析的json数组，Class<T> 为你要解析的实体类。返回类型为  指定的实体类。
+	JTool.parseJsonArrayToObj(JsonArray jsonArray,Class<T> classT) 
+        </pre>
         </body>
 </html>
